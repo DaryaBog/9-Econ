@@ -16,6 +16,16 @@ a:focus,
 a:active {
     outline: none;
 }
+@font-face {
+    font-family: "Euclid";
+    src: url("./fonts/euclid-circular-a-cdnfonts/Euclid\ Circular\ A\ Regular.ttf") format("woff2");
+    /* url("/fonts/OpenSans-Regular-webfont.woff") format("woff"); */
+}
+@font-face {
+    font-family: "Euclid Bold";
+    src: url("./fonts/euclid-circular-a-cdnfonts/Euclid\ Circular\ A\ Bold.ttf") format("woff2");
+    /* url("/fonts/OpenSans-Regular-webfont.woff") format("woff"); */
+}
 nav,
 footer,
 header,
@@ -83,7 +93,7 @@ img {
 
 body {
     background-color: #ffffff;
-    font-family: "Euclid Circular A", sans-serif;
+    font-family: "Euclid";
 }
 
 .wrapper {
@@ -1201,7 +1211,14 @@ output[for]::after {
     padding-right: 4px;
 }
 
+.item_serch {
+    display: none;
+}
+
 @media (max-width: 416px) {
+    .item_serch {
+        display: block;
+    }
     .wrapper {
         display: grid;
         grid-template: 125px 1fr 1988px/ 1fr;
