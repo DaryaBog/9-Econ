@@ -10,18 +10,11 @@ for (let i = 0; i < inp.length; i++) {
 }
 
 input.addEventListener('focus', function (event) {
-    if (media.matches) {
-        let value = this.value
-        value = ''
-    }
     placeholder.classList.add('placeholder_active')
 })
+
 input.addEventListener('blur', function (event) {
     let value = this.value
-    if (media.matches) {
-        let value = this.value
-        value = ''
-    }
     if (!value) placeholder.classList.remove('placeholder_active')
 })
 
