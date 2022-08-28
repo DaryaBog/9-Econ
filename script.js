@@ -1,4 +1,6 @@
 // serhc
+
+const media = window.matchMedia('(max-width: 416px)')
 const input = document.querySelector('.menu__input')
 const placeholder = document.querySelector('.menu__placeholder')
 
@@ -8,10 +10,19 @@ for (let i = 0; i < inp.length; i++) {
 }
 
 input.addEventListener('focus', function (event) {
+    if (media.matches) {
+        let value = this.value
+        value = ''
+    }
     placeholder.classList.add('placeholder_active')
 })
 input.addEventListener('blur', function (event) {
-    placeholder.classList.remove('placeholder_active')
+    let value = this.value
+    if (media.matches) {
+        let value = this.value
+        value = ''
+    }
+    if (!value) placeholder.classList.remove('placeholder_active')
 })
 
 
@@ -42,7 +53,6 @@ const filtres = document.querySelector('.section__filters')
 const burger = document.querySelector('.burger')
 const serch = document.querySelector('.serch')
 const wrapper = document.querySelector('.wrapper')
-const media = window.matchMedia('(max-width: 416px)')
 
 document.addEventListener('click', event => {
     if (event.target.closest('.sorting__sort')) {
