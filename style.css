@@ -500,6 +500,7 @@ a.active {
     margin-bottom: 190px;
 }
 .section__filters {
+    position: relative;
     grid-area: aside;
     background: #f4f4f4;
     width: 355px;
@@ -703,7 +704,7 @@ a.active {
     z-index: 0;
     top: 0;
     bottom: 0;
-    left: calc(0.1em + (var(--noti) * (var(--a) - var(--min)) + var(--i) * (var(--b) - var(--min))) * var(--uu));
+    left: calc(0.2em + (var(--noti) * (var(--a) - var(--min)) + var(--i) * (var(--b) - var(--min))) * var(--uu));
     width: calc(var(--sgni) * (var(--b) - var(--a)) * var(--uu) * 1.03);
     background: #38d3e8;
     content: "";
@@ -829,7 +830,7 @@ input[type="range"]:not(:only-of-type)::-ms-fill-lower {
 
 output[for] {
     --ar: 0;
-    --pos: calc((var(--c) - var(--min)) * var(--uu) * 6);
+    --pos: calc((var(--c) - var(--min)) * var(--uu) * 5);
     position: absolute;
     z-index: var(--hl);
     bottom: 100%;
@@ -845,7 +846,15 @@ output[for]::after {
     color: #2b2e34;
     content: var(--s) counter(c) var(--p);
 }
-
+@media (max-width: 416px) {
+    output[for] {
+        --pos: calc((var(--c) - var(--min)) * var(--uu) * 6);
+    }
+    .wrap::before,
+    .wrap::after {
+        left: calc(0.1em + (var(--noti) * (var(--a) - var(--min)) + var(--i) * (var(--b) - var(--min))) * var(--uu));
+    }
+}
 /* ----color---- */
 
 .check__color label::before {

@@ -47,6 +47,16 @@ const burger = document.querySelector('.burger')
 const serch = document.querySelector('.serch')
 const wrapper = document.querySelector('.wrapper')
 
+window.onresize = () => {
+    if (!media.matches) {
+        wrapper.style.overflow = 'visible'
+        filtres.classList.remove('filters_active')
+        burger.classList.remove('burger_active')
+        serch.classList.remove('serch_active')
+    }
+}
+
+
 document.addEventListener('click', event => {
     if (event.target.closest('.sorting__sort')) {
         arrow.classList.toggle('img_active')
@@ -81,6 +91,7 @@ document.addEventListener('click', event => {
         wrapper.style.overflow = 'visible'
     }
     // open burger
+
     if (event.target.closest('.menu__burger') && media.matches) {
         burger.classList.add('burger_active')
         wrapper.style.overflow = 'hidden'
