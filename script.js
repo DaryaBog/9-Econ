@@ -84,6 +84,7 @@ document.addEventListener('click', event => {
     // open filtres
     if (event.target.closest('.filters_1')) {
         filtres.classList.add('filters_active')
+        window.scrollTo(0, 0);
         wrapper.style.overflow = 'hidden'
     }
     if (event.target.closest('.filters__button')) {
